@@ -76,6 +76,13 @@ class Renderer: NSObject {
 
         var vertexData: [Float] = []
 
+        // kVAPMTLVerticesIdentity 顶点坐标图示, []里面是序号
+//        [1](-1, 1) ---  (1, 1) [3]
+//         |                      |
+//         |                      |
+//        [0](-1, -1) --- (1, -1)[2]
+        // genMTLTextureCoordinates 里面生成纹理坐标, 左上角是（originX, originY）
+        // 下面的方法是将顶点坐标和纹理坐标对应上
         for i in 0..<4*colunmCountForVertices {
             vertexData.append(kVAPMTLVerticesIdentity[i])
 
