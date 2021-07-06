@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         mtkView.device = MTLCreateSystemDefaultDevice()
         renderer = Renderer(device: mtkView.device!)
 
+        mtkView.preferredFramesPerSecond = 25
         mtkView.delegate = renderer
     }
 }

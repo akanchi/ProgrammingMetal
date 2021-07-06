@@ -20,7 +20,12 @@ class Renderer: NSObject {
         var offset: simd_packed_float2
     }
 
-    let kVAPMTLVerticesIdentity: [Float] = [-1.0, -1.0, 0.0, 1.0, -1.0, 1.0, 0.0, 1.0, 1.0, -1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+    let kVAPMTLVerticesIdentity: [Float] = [
+        -1.0, -1.0, 0.0, 1.0,
+        -1.0, 1.0, 0.0, 1.0,
+        1.0, -1.0, 0.0, 1.0,
+        1.0, 1.0, 0.0, 1.0
+    ]
 
     let kColorConversionMatrix601FullRangeDefault: simd_float3x3 = simd_float3x3([
         SIMD3<Float>(1.0, 1.0, 1.0),
