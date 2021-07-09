@@ -55,6 +55,7 @@ class Renderer: NSObject {
     }
 
     private func bulidYUVMatrix() {
+        // full range Cb Cr 偏移 -128
         let yuvMatrixs: [ColorParameters] = [ColorParameters(matrix: kColorConversionMatrix601FullRangeDefault, offset: simd_packed_float2(0.5, 0.5))]
 
         self.yuvMatrixBuffer = self.device.makeBuffer(bytes: yuvMatrixs, length: yuvMatrixs.count * MemoryLayout<ColorParameters>.stride, options: .storageModeShared)

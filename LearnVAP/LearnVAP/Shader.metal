@@ -39,6 +39,12 @@ float3 RGBColorFromYuvTextures(sampler textureSampler, float2 coordinate, textur
     float3 color;
     color.x = texture_luma.sample(textureSampler, coordinate).r;
     color.yz = texture_chroma.sample(textureSampler, coordinate).rg - offset;
+
+    // 矩阵相乘
+//    | 1.0     0.0         1.402       |       | Y |
+//    | 1.0     -0.34413    -0.71414    |   *   | Cb - 128 |
+//    | 1.0     1.772       0.0         |       | Cr - 128 |
+
     return float3(rotationMatrix * color);
 }
 
